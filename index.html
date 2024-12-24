@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Image Swap</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #f0f0f0;
+    }
+    img {
+      max-width: 90%;
+      max-height: 90%;
+      cursor: pointer;
+      border: 2px solid #ccc;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      transition: transform 0.2s;
+    }
+    img:hover {
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+  <img id="swapImage" src="image.png" alt="Click to swap" />
+
+  <script>
+    // Paths to the images
+    const image1 = "image.png";
+    const image2 = "image2.png";
+
+    // Reference to the image element
+    const imageElement = document.getElementById("swapImage");
+
+    // Add click event listener
+    imageElement.addEventListener("click", () => {
+      // Check the current image source and swap
+      if (imageElement.src.includes(image1)) {
+        imageElement.src = image2;
+      } else {
+        imageElement.src = image1;
+      }
+    });
+  </script>
+</body>
+</html>
